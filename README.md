@@ -21,12 +21,13 @@ Welcome aboard. The goal of this package is to quantitatively evaluate the
 ##How to Get Started
 
 Once the repo has been cloned locally (on a system with python installed along with the Flask package), one can run the main.py which will spin up the flask instance.
+If the user will use the python package, requests, to post requests to the app, then the requests package will also need to be installed.
 
 #Browser Test
 The current code is built to offer an html interface but the responses are easily discernable if you choose to post directly (next subsection). Navigating to **http://127.0.0.1:5000/** will provide an interface to interact with the scoring algorithm.
 
 #URL Request
-If you want to post directly using cURL, the request will look something like this:
+If you want to post directly using cURL via command line, the request will look something like this:
 ```
 curl --data "text1=put first example here&text2=put second example here" http://127.0.0.1:5000/
 ```
@@ -59,7 +60,7 @@ puncuation though this could be expanded. I've also made the bold
 assumption that any space is a single space. Lastly, typos constitute 
 a different word. There is no inference to the user's intent.
 ##Known Bugs
-There is no handling present for multiple consecutive spaces.
+There is no handling present for multiple consecutive spaces. There is also not extensive special character handling.
 
 ##Next Steps
 The first opportunity for improvement would we weight tuning in two places. 
@@ -73,5 +74,5 @@ two texts vary in size dramatically. This may pose a symmetry problem.
  own intuition but should be further tuned. Another test can also be 
  added where common words are removed and only words of *value* 
  are compared between the two blocks. The last pieces that can be tidied are mostly aesthetics. 
- The psot request could carry txt files. The html can be scrapped depending on 
+ The app could do more heavy special character handling. The post request could carry txt files. The html can be scrapped depending on 
  common use cases.
