@@ -19,8 +19,30 @@ Welcome aboard. The goal of this package is to quantitatively evaluate the
   
 
 ##How to Get Started
+
+Once the repo has been cloned locally (on a system with python installed along with the Flask package), one can run the main.py which will spin up the flask instance.
+
 #Browser Test
+The current code is built to offer an html interface but the responses are easily discernable if you choose to post directly (next subsection). Navigating to **http://127.0.0.1:5000/** will provide an interface to interact with the scoring algorithm.
+
 #URL Request
+If you want to post directly using cURL, the request will look something like this:
+```
+curl --data "text1=put first example here&text2=put second example here" http://127.0.0.1:5000/
+```
+
+The response will contain the similarity score nested in the html code block like this:
+
+```
+                <html>
+                    <body>
+                        <p>The similarity score (out of 1) is 0.075</p>
+                        <p><a href="/">Click here to give it another go</a>
+                    </body>
+                </html>
+```
+Within the application, the return expressions can be alterred so they're more user friendly. The non-html versions are there and are commented out. Similar to cURL, one can use python requests to achieve the same results:
+
 ```python
 import requests
 
@@ -50,4 +72,6 @@ two texts vary in size dramatically. This may pose a symmetry problem.
  (line 105 in stringscore.py) that was initially decided off of my 
  own intuition but should be further tuned. Another test can also be 
  added where common words are removed and only words of *value* 
- are compared between the two blocks.
+ are compared between the two blocks. The last pieces that can be tidied are mostly aesthetics. 
+ The psot request could carry txt files. The html can be scrapped depending on 
+ common use cases.
