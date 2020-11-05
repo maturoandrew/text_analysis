@@ -10,7 +10,7 @@ Welcome aboard. The goal of this package is to quantitatively evaluate the
   similarity and subset similarities. The former refers to how much 
   the set of distinct 'words' contained in the text overlaps with 
   the corresponding set of the second text. The latter studies how 
-  many strings of words > 1 word long are in identical in both blocks.
+  many strings of words > 1 word long are identical in both blocks.
   
   In conclusion, we've got a symmetric text comparing tool. From my 
   experimention, scores about ~0.7 are strong similarities. The scores 
